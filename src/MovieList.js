@@ -1,11 +1,9 @@
-import React, { useState,useffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import MovieCard from './MovieCard';
-
 function MovieList () {
   const [movies, setMovies] = useState([]);
-   useffect(()=>{
+   useEffect(()=>{
     setMovies([
-   
     {
       title: 'Furtive',
       description:
@@ -35,13 +33,14 @@ function MovieList () {
 [])
   return (
     <div>
-      <MovieCard key ={movies.title}
-       movie ={ movies }
+      { movies.map(movie=>(  
+      <MovieCard key ={movie.title}
+       movie ={ movie }
        />
+      ))}
         </div>
       );
     }
-
  export default MovieList;
 
 
